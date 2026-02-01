@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Africa Scholars Academy Online Education Portal</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width">
+</head>
+<body>
+
+<header>
+  <h1>Online Education Portal</h1>
+  <p>Zero-Rated Ready and Friendly</p>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="subjects.html">Subjects</a>
+  <a href="platforms.html">Platforms</a>
+  <a href="malawi.html">Malawi</a>
+</nav>
+
+<div class="container">
+  <div class="controls">
+    <select id="subject" onchange="filterVideos()">
+      <option value="all">All Subjects</option>
+      <option value="math">Math</option>
+      <option value="science">Science</option>
+      <option value="history">History</option>
+    </select>
+
+    <select id="platform" onchange="filterVideos()">
+      <option value="all">All Platforms</option>
+      <option value="khan">Khan Academy</option>
+      <option value="crashcourse">CrashCourse</option>
+      <option value="natgeo">National Geographic</option>
+      <option value="teded">TED-Ed</option>
+      <option value="bbc">BBC</option>
+      <option value="mit">MIT OCW</option>
+      <option value="unesco">UNESCO</option>
+      <option value="ubs">UBS Learning</option>
+      <option value="sabc">SABC Education</option>
+      <option value="afdb">AfDB</option>
+      <option value="university">University</option>
+    </select>
+  </div>
+
+  <div id="videoGrid" class="grid"></div>
+</div>
+
+<footer>
+  Embedded from official sources only. Optimized for zero-data browsing.
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

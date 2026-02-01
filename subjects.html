@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Subjects</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><h1>Subjects</h1></header>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="subjects.html">Subjects</a>
+  <a href="platforms.html">Platforms</a>
+  <a href="malawi.html">Malawi</a>
+</nav>
+
+<div class="container">
+  <select id="subject" onchange="filterVideos()">
+    <option value="math">Math</option>
+    <option value="science">Science</option>
+    <option value="history">History</option>
+  </select>
+
+  <input type="hidden" id="platform" value="all">
+  <div id="videoGrid" class="grid"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
