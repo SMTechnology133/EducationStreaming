@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Africa Scholars Academy Online Education Portal</title>
+  <meta charset="UTF-8">
+  <title>Africa Scholars Academy | Online Education Portal</title>
   <link rel="stylesheet" href="style.css">
-  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
@@ -21,34 +22,34 @@
 
 <div class="container">
   <div class="controls">
-    <select id="subject" onchange="filterVideos()">
-      <option value="all">All Subjects</option>
-      <option value="math">Math</option>
-      <option value="science">Science</option>
-      <option value="history">History</option>
-    </select>
+    <input type="text" id="searchInput" onkeyup="filterVideos()" placeholder="Search for MANEB, Math, Science, etc...">
+    
+    <div style="display: flex; gap: 10px;">
+      <select id="subject" onchange="filterVideos()">
+        <option value="all">All Subjects</option>
+        <option value="math">Math</option>
+        <option value="science">Science</option>
+        <option value="history">History / Social Studies</option>
+      </select>
 
-    <select id="platform" onchange="filterVideos()">
-      <option value="all">All Platforms</option>
-      <option value="khan">Khan Academy</option>
-      <option value="crashcourse">CrashCourse</option>
-      <option value="natgeo">National Geographic</option>
-      <option value="teded">TED-Ed</option>
-      <option value="bbc">BBC</option>
-      <option value="mit">MIT OCW</option>
-      <option value="unesco">UNESCO</option>
-      <option value="ubs">UBS Learning</option>
-      <option value="sabc">SABC Education</option>
-      <option value="afdb">AfDB</option>
-      <option value="university">University</option>
-    </select>
+      <select id="platform" onchange="filterVideos()">
+        <option value="all">All Platforms</option>
+        <option value="malawi">Malawi Online Classes</option>
+        <option value="khan">Khan Academy</option>
+        <option value="crashcourse">CrashCourse</option>
+        <option value="sabc">SABC Education</option>
+        <option value="afdb">AfDB (Development)</option>
+        <option value="mit">MIT OCW</option>
+      </select>
+    </div>
   </div>
 
-  <div id="videoGrid" class="grid"></div>
+  <div id="videoGrid" class="grid">
+    </div>
 </div>
 
 <footer>
-  Embedded from official sources only. Optimized for zero-data browsing.
+  Official Educational Content Only. Optimized for low-data environments.
 </footer>
 
 <script src="script.js"></script>

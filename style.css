@@ -2,96 +2,180 @@
 
 body {
   margin: 0;
-  font-family: system-ui, Arial, sans-serif;
+  font-family: system-ui, -apple-system, Arial, sans-serif;
   background: #f2f2f2;
   color: #222;
+  line-height: 1.5;
 }
 
 header {
-  background: teal;
+  background: #008080; /* Teal */
   color: #fff;
-  padding: 12px;
+  padding: 20px 12px;
   text-align: center;
 }
 
+header h1 { margin: 0; font-size: 1.5rem; }
+header p { margin: 5px 0 0; opacity: 0.9; font-size: 0.9rem; }
+
 nav {
   background: #222;
+  position: sticky; /* Keeps nav at top while scrolling */
+  top: 0;
+  z-index: 1000;
   text-align: center;
 }
 
 nav a {
   color: #fff;
-  padding: 10px;
+  padding: 12px 15px;
   display: inline-block;
   text-decoration: none;
   font-size: 14px;
+  transition: background 0.2s;
 }
 
+nav a:hover { background: #333; }
+
 .container {
-  padding: 12px;
+  padding: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .controls {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  display: flex; /* Side-by-side on larger screens */
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
-select, input {
-  padding: 8px;
-  margin: 5px 0;
-  width: 100%;
+select {
+  padding: 10px;
+  flex: 1;
+  min-width: 150px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: white;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
-  gap: 12px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
 }
 
 .card {
   background: #fff;
-  padding: 8px;
-  border-radius: 6px;
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-3px); /* Subtle lift on hover */
 }
 
 .card h3 {
-  font-size: 15px;
-  margin: 5px 0;
+  font-size: 16px;
+  margin: 0 0 10px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; /* Prevents long titles from breaking layout */
 }
 
+/* 16:9 Aspect Ratio Container */
 .video-placeholder {
   position: relative;
   width: 100%;
-  padding-top: 56.25%; /* 16:9 ratio */
+  padding-top: 56.25%; 
   background: #000;
   cursor: pointer;
   border-radius: 4px;
   overflow: hidden;
 }
 
-.video-placeholder img {
+/* This targets BOTH the img and the iframe after click */
+.video-placeholder img, 
+.video-placeholder iframe {
   position: absolute;
-  top:0; left:0;
-  width:100%;
-  height:100%;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
   object-fit: cover;
 }
 
 .play-btn {
   position: absolute;
-  top:50%; left:50%;
+  top: 50%; left: 50%;
   transform: translate(-50%, -50%);
-  background: rgba(0,0,0,0.6);
+  background: rgba(0, 128, 128, 0.8); /* Teal with transparency */
   color: #fff;
   border: none;
-  padding: 10px 18px;
-  font-size: 16px;
+  width: 60px;
+  height: 60px;
+  font-size: 20px;
   border-radius: 50%;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s, scale 0.2s;
+  z-index: 2;
+}
+
+.play-btn:hover {
+  background: rgba(0, 128, 128, 1);
+  scale: 1.1;
 }
 
 footer {
   text-align: center;
-  padding: 10px;
+  padding: 20px;
   font-size: 13px;
   background: #ddd;
+  margin-top: 40px;
+}
+
+#searchInput {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 10px;
+  border: 2px solid teal;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+#searchInput {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border: 2px solid #008080; /* Teal */
+  border-radius: 6px;
+  font-size: 16px;
+  outline: none;
+}
+
+.card-footer {
+  padding: 8px 0 0;
+  text-align: right;
+}
+
+.card-footer a {
+  font-size: 11px;
+  color: #008080;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.card-footer a:hover {
+  text-decoration: underline;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
 }
